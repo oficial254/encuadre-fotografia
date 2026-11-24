@@ -129,6 +129,7 @@ h4{font:800 1.1rem/1.1 var(--label);letter-spacing:.04em;text-transform:uppercas
 .ctl:first-child{border-top:0}
 .ctl-name{font-weight:700}
 .ctl-help{color:var(--muted);font-size:.85rem;line-height:1.35}
+.ctl-tope{grid-column:1/-1;margin-top:4px;padding:9px 12px;background:var(--gold-soft);border-radius:var(--radius);font-size:.85rem;font-weight:600;line-height:1.35}
 .ctl-sub{justify-self:end;font:600 .78rem/1 var(--label);color:var(--muted);font-variant-numeric:tabular-nums}
 .step{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--bg)}
 .step button{width:42px;height:42px;border:0;background:transparent;font-size:1.25rem;line-height:1;cursor:pointer}
@@ -210,6 +211,25 @@ h4{font:800 1.1rem/1.1 var(--label);letter-spacing:.04em;text-transform:uppercas
 .foot p{margin:0;font-size:.85rem;color:var(--muted)}
 .foot .lema{font-weight:700;color:var(--gold-deep);font-size:.95rem}
 
+/* Redes sociales */
+.redes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:8px}
+.red{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:14px;padding:clamp(22px,4vw,34px);border-radius:var(--radius);color:#FBF8F3;text-decoration:none;overflow:hidden;border:1px solid rgba(232,197,106,.35);transition:transform .2s,box-shadow .2s}
+.red::after{content:"";position:absolute;inset:auto -40px -60px auto;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(232,197,106,.28),transparent 68%);pointer-events:none}
+.red--ig{background:linear-gradient(140deg,#1E1D1B 0%,#2B2110 55%,#4A3410 100%)}
+.red--fb{background:linear-gradient(140deg,#1E1D1B 0%,#1A2230 55%,#223452 100%)}
+.red:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(14,13,12,.28)}
+.red-ico{display:grid;place-items:center;width:58px;height:58px;border-radius:16px;background:var(--gold-grad);color:#1E1D1B}
+.red-top{display:flex;flex-direction:column;gap:4px}
+.red-top b{font:700 1.5rem/1.1 var(--label);letter-spacing:.01em}
+.red-user{font:600 .9rem/1.2 var(--label);color:#E8C56A;word-break:break-all}
+.red-txt{font-size:.95rem;line-height:1.5;opacity:.88;max-width:40ch}
+.red-go{display:inline-flex;align-items:center;gap:10px;margin-top:auto;padding:12px 18px;border-radius:var(--radius);background:var(--gold-grad);color:#1E1D1B;font:700 .8rem/1 var(--label);letter-spacing:.1em;text-transform:uppercase}
+.red:hover .red-go svg{transform:translateX(3px)}
+.red-go svg{transition:transform .2s}
+.foot .redes-pie{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:10px}
+.foot .redes-pie a{font-weight:700;font-size:.85rem;color:var(--gold-deep)}
+@media (max-width:700px){.redes{grid-template-columns:minmax(0,1fr)}}
+
 /* Reserva y comprobante */
 .md{position:fixed;inset:0;z-index:60;overflow-y:auto;background:rgba(14,13,12,.72);padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
 .md-card{max-width:640px;margin:0 auto;padding:22px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius)}
@@ -224,6 +244,28 @@ h4{font:800 1.1rem/1.1 var(--label);letter-spacing:.04em;text-transform:uppercas
 .md-acts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:10px}
 .md-card .nota{margin:14px 0 0}
 .btn[disabled]{opacity:.6;cursor:default}
+
+/* Pago */
+.adel-chips{margin-top:10px}
+.adel-min{margin:8px 0 0;font-size:.85rem;color:var(--muted)}
+.pago,.pago-cot{margin:16px 0 0;padding:16px;border:1px solid var(--gold);border-radius:var(--radius);background:var(--bg)}
+.pago-lead,.pago-cot p{margin:8px 0 12px;font-size:.9rem;line-height:1.45}
+.pago-list{display:grid;gap:8px;margin-bottom:12px}
+.pago-item{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 12px;padding:12px 14px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+.pago-item b{font:700 1rem/1.2 var(--label)}
+.pago-item small{display:block;margin-top:3px;color:var(--muted);font-size:.8rem}
+.pago-item .dato{font:700 1.05rem/1.2 var(--label);letter-spacing:.03em;user-select:all}
+.pago-vacio{margin-bottom:12px}
+.pago-vacio p{margin:0 0 10px;font-size:.9rem}
+.pago-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.pago-form .full{grid-column:1/-1}
+.pago-form input[type=text],.pago-form select{width:100%;min-height:44px;padding:10px 12px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);color:var(--fg);font:inherit}
+.pago-ok{display:flex;gap:10px;align-items:flex-start;font-size:.9rem;line-height:1.4;cursor:pointer}
+.pago-ok input{flex:none;width:20px;height:20px;margin-top:1px;accent-color:var(--gold-deep)}
+.pago-estado{margin-top:12px;padding:12px 14px;border-radius:var(--radius);background:var(--gold-soft);font-size:.92rem;line-height:1.45}
+.md-lock{margin:0 0 10px;font-size:.85rem;color:var(--muted)}
+.btn[aria-disabled="true"]{opacity:.45;pointer-events:none}
+@media (max-width:520px){.pago-form{grid-template-columns:minmax(0,1fr)}}
 
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -248,6 +290,7 @@ h4{font:800 1.1rem/1.1 var(--label);letter-spacing:.04em;text-transform:uppercas
       <a href="#paquetes">Paquetes</a>
       <a href="#personalizado">Personalizado</a>
       <a href="#trabajos" id="nav-tra">Trabajos</a>
+      <a href="#redes">Redes</a>
       <a href="#resenas" id="nav-res">Reseñas</a>
     </nav>
     <a class="btn btn--sm" id="wa-top" href="#reservar" target="_blank" rel="noopener">WhatsApp</a>
@@ -319,6 +362,27 @@ h4{font:800 1.1rem/1.1 var(--label);letter-spacing:.04em;text-transform:uppercas
     </div>
   </section>
 
+  <section class="sec" id="redes">
+    <div class="wrap">
+      <div class="sec-head"><h2>Mira mi trabajo en redes</h2><span class="lab">Síguenos</span></div>
+      <p class="lead">Aquí subo mis sesiones recientes, bodas, quince años y lo que pasa detrás de cámaras. Entra y mira cómo trabajo.</p>
+      <div class="redes">
+        <a class="red red--ig" id="red-ig" href="#redes" target="_blank" rel="noopener">
+          <span class="red-ico"><svg viewBox="0 0 32 32" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="16" r="11"/><circle cx="16" cy="16" r="4.2"/><path d="M16 5l4.5 7.8M27 16h-9M22 25l-4.5-7.8M10 25l4.5-7.8M5 16h9M10 7l4.5 7.8" opacity=".55"/></svg></span>
+          <span class="red-top"><b>Instagram</b><span class="red-user" id="red-ig-u"></span></span>
+          <span class="red-txt">Fotos y videos de mis últimos trabajos. Entra, mira el resultado y escríbeme si te gusta mi estilo.</span>
+          <span class="red-go">Seguir en Instagram <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="red red--fb" id="red-fb" href="#redes" target="_blank" rel="noopener">
+          <span class="red-ico"><svg viewBox="0 0 32 32" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11.5" cy="11" r="4"/><circle cx="23" cy="12.5" r="3.2"/><path d="M3.5 26c.6-5 3.8-8 8-8s7.4 3 8 8M19.5 19.5c.9-.4 1.9-.6 3-.6 3.4 0 5.6 2.4 6 6.6"/></svg></span>
+          <span class="red-top"><b>Facebook</b><span class="red-user" id="red-fb-u"></span></span>
+          <span class="red-txt">Publicaciones y álbumes de mi trabajo. Visita la página y compártela con quien esté buscando fotógrafo.</span>
+          <span class="red-go">Ver mi Facebook <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <section class="sec" id="resenas">
     <div class="wrap">
       <div class="sec-head"><h2>Lo que dicen mis clientes</h2><span class="lab" id="meta-res"></span></div>
@@ -332,13 +396,13 @@ h4{font:800 1.1rem/1.1 var(--label);letter-spacing:.04em;text-transform:uppercas
       <div class="cta">
         <div>
           <h2>Reserva por WhatsApp</h2>
-          <p class="sub">Sin pagos en línea: reservas, descargas tu comprobante y nos escribes.</p>
+          <p class="sub">Separa tu fecha con un adelanto, descarga tu comprobante y envíanoslo por WhatsApp.</p>
         </div>
         <div>
           <ol class="steps">
             <li>Elige un paquete o arma el tuyo y toca Reservar.</li>
-            <li>Llena tus datos y descarga tu comprobante en PDF.</li>
-            <li>Envía el mensaje por WhatsApp y confirmamos fecha y detalles.</li>
+            <li>Llena tus datos y paga el adelanto con el medio que prefieras.</li>
+            <li>Descarga tu comprobante en PDF y envíalo por WhatsApp: verificamos el pago y confirmamos fecha y detalles.</li>
           </ol>
           <a class="btn btn--gold" id="wa-cta" href="#reservar" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-4.3A8 8 0 1 1 8.5 18.8z"/><path d="M9 9.5c.4 2.4 2.4 4.4 5 5l1.2-1.3-2-1-.8.7c-.8-.4-1.5-1.1-1.9-1.9l.7-.8-1-2z" fill="currentColor" stroke="none"/></svg>
@@ -348,7 +412,7 @@ h4{font:800 1.1rem/1.1 var(--label);letter-spacing:.04em;text-transform:uppercas
             <span class="num" id="num"></span>
             <button type="button" class="btn btn--ghost btn--sm" id="copiar">Copiar número</button>
           </div>
-          <div class="row"><a class="ig" id="ig" href="#reservar" target="_blank" rel="noopener"></a></div>
+          <div class="row"><a class="ig" id="ig" href="#reservar" target="_blank" rel="noopener"></a><a class="ig" id="fb" href="#reservar" target="_blank" rel="noopener"></a></div>
         </div>
       </div>
     </div>
@@ -361,6 +425,7 @@ h4{font:800 1.1rem/1.1 var(--label);letter-spacing:.04em;text-transform:uppercas
     <div>
       <p class="lema" id="pie-lema"></p>
       <p id="pie-info"></p>
+      <div class="redes-pie" id="pie-redes"></div>
     </div>
   </div>
 </footer>
@@ -396,22 +461,43 @@ h4{font:800 1.1rem/1.1 var(--label);letter-spacing:.04em;text-transform:uppercas
       <div class="full"><label class="lab" for="r-notas">Notas</label><textarea id="r-notas" placeholder="Ideas, cantidad de personas, lo que quieras contarnos"></textarea></div>
     </div>
     <div class="adel" id="adel" hidden>
-      <label class="lab" for="r-adelanto">Adelanto (opcional)</label>
+      <label class="lab" for="r-adelanto">Valor que vas a pagar ahora</label>
       <div class="adel-row">
         <span class="adel-pre">$</span>
         <input id="r-adelanto" type="text" inputmode="numeric" autocomplete="off" placeholder="Ej. 100.000">
-        <button type="button" class="chip" data-pct="30">30 %</button>
-        <button type="button" class="chip" data-pct="50">50 %</button>
       </div>
+      <div class="chips adel-chips" id="adel-chips"></div>
+      <p class="adel-min" id="adel-min"></p>
       <div class="adel-sum" id="md-saldo" aria-live="polite" hidden></div>
     </div>
+    <div class="pago" id="pago" hidden>
+      <h4 class="lab">Paga para separar tu fecha</h4>
+      <p class="pago-lead">Haz el pago por el valor de arriba con uno de estos medios. Luego escribe el número de referencia que te da la app y confirma. Cuando confirmes, se activa tu comprobante.</p>
+      <div class="pago-list" id="pago-list"></div>
+      <div class="pago-vacio" id="pago-vacio" hidden>
+        <p>Escríbeme por WhatsApp y te comparto los datos para hacer el pago.</p>
+        <a class="btn" id="pago-wa" href="#reservar" target="_blank" rel="noopener">Pedir datos de pago</a>
+      </div>
+      <div class="pago-form" id="pago-form">
+        <div><label class="lab" for="p-medio">Medio con el que pagaste</label><select id="p-medio"></select></div>
+        <div><label class="lab" for="p-ref">Referencia del pago</label><input id="p-ref" type="text" autocomplete="off" placeholder="Número que aparece en tu comprobante"></div>
+        <label class="pago-ok full"><input type="checkbox" id="p-ok"><span id="p-ok-txt">Hice el pago.</span></label>
+        <button type="button" class="btn btn--gold full" id="p-conf">Confirmar pago</button>
+      </div>
+      <div class="pago-estado" id="pago-estado" role="status" hidden></div>
+    </div>
+    <div class="pago-cot" id="pago-cot" hidden>
+      <p><b>Este valor aún está por cotizar.</b> Escríbeme por WhatsApp para confirmarte el precio final y los datos de pago.</p>
+      <a class="btn btn--gold" id="cot-wa" href="#reservar" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+    </div>
     <p class="md-msg" id="md-msg" role="status" aria-live="polite"></p>
-    <div class="md-acts">
+    <p class="md-lock" id="md-lock">Los botones se activan cuando confirmes tu pago.</p>
+    <div class="md-acts" id="md-acts">
       <button type="button" class="btn btn--gold" id="r-pdf">Descargar comprobante PDF</button>
       <button type="button" class="btn btn--ghost" id="r-share" hidden>Compartir el PDF</button>
       <a class="btn" id="r-wa" href="#reservar" target="_blank" rel="noopener">Enviar por WhatsApp</a>
     </div>
-    <p class="nota">Es una solicitud de reserva: queda confirmada cuando Encuadre Fotográfico responda por WhatsApp. No es una factura electrónica.</p>
+    <p class="nota">Es una solicitud de reserva: queda confirmada cuando Encuadre Fotográfico verifique tu pago y responda por WhatsApp. No es una factura electrónica.</p>
   </div>
 </div>
 
@@ -436,6 +522,16 @@ const CONFIG = {
   whatsapp: '573229824943',            // código de país + número, sin + ni espacios
   whatsappVisible: '+57 322 982 4943', // como se muestra en pantalla
   instagram: 'theframebybriam',        // usuario sin @
+  instagramUrl: 'https://www.instagram.com/theframebybriam',
+  facebookUrl: 'https://www.facebook.com/thebrahiam',
+  facebookUsuario: 'thebrahiam',
+  /* Pago para separar la fecha. Llena aquí tus medios de pago (se muestran al reservar). Ejemplo:
+     {nombre:'Nequi', dato:'300 000 0000', titular:'Nombre del titular'} */
+  pagos: [
+    {nombre:'Nequi', dato:'322 982 4943', titular:'Luis Parra'},
+    {nombre:'Llave Bre-B', dato:'322 982 4943', titular:'Luis Parra'}
+  ],
+  adelantoMinimoPct: 30,               // % mínimo del valor del paquete que se paga para separar la fecha
   heroImagen: IMGS.boda,
   aviso: 'Promoción válida hasta el 31 de diciembre de 2026. Paquetes sujetos a disponibilidad y agenda previa.'
 };
@@ -446,41 +542,41 @@ const CONFIG = {
    Mientras no tengan precio, el valor de un paquete ajustado se cotiza por WhatsApp. */
 /* Reglas de precio del armador.
    - El armador parte del paquete que el cliente elija como base (Básico, Estándar o Premium): su precio incluye lo que trae, y solo se cobra lo que se agregue por encima.
-   - Horas adicionales: 50.000 por hora.  - Fotos editadas adicionales (sobre las del paquete base): por tramos (5 a 5.000, 5 a 4.000, 5 a 3.000, 5 a 2.500 y de ahí en adelante 2.500).
-   - Fotos impresas adicionales: $5.000 fijo c/u. Cambio de ropa adicional 20.000, locación adicional 35.000.
+   - Horas adicionales: 50.000 por hora.
+   - Fotos editadas adicionales (sobre las del paquete base): precio por foto según el paquete base (campo fotoExtra) y un tope de fotos adicionales (topeFotos; null = sin tope).
+   - Fotos impresas: mínimo 10 (de 0 salta a 10, luego de 1 en 1); adicionales a $5.000 fijo c/u. Retablos: 60×100 $165.000, 40×60 $105.000, 30×40 $70.000. Cambio de ropa adicional 20.000, locación adicional 35.000.
    - Opciones con "suma": agregan horas/fotos al paquete sin cobrarlas aparte. */
 const PRECIO_HORA = 50000;
-const TRAMOS_FOTO = [[5,5000],[5,4000],[5,3000],[5,2500]];
-const PRECIO_FOTO_FINAL = 2500;
-function costoFotos(n){
-  let resto = n, total = 0;
-  for(const t of TRAMOS_FOTO){ const k = Math.min(resto,t[0]); total += k*t[1]; resto -= k; if(resto<=0) return total; }
-  return total + resto*PRECIO_FOTO_FINAL;
-}
-const ETQ_FOTOS = 'las del paquete base van incluidas; adicionales de 1 en 1: primeras 5 a $5.000, siguientes 5 a $4.000, luego $3.000 y desde ahí $2.500 c/u';
+const MIN_IMPRESAS = 10;   // fotos impresas: se piden desde 10, y de ahí de 1 en 1
+/* Retablos: el cliente elige el tamaño y la cantidad. */
+const RETABLOS = [
+  {id:'retablo60', nombre:'Retablo 60×100', detalle:'Gran formato', unidad:'retablo', precio:165000, min:0, max:5, paso:1, linea:n=> n+(n===1?' retablo 60×100':' retablos 60×100')},
+  {id:'retablo40', nombre:'Retablo 40×60', detalle:'Formato mediano', unidad:'retablo', precio:105000, min:0, max:5, paso:1, linea:n=> n+(n===1?' retablo 40×60':' retablos 40×60')},
+  {id:'retablo30', nombre:'Retablo 30×40', detalle:'Foto enmarcada lista para colgar', unidad:'retablo', precio:70000, min:0, max:5, paso:1, linea:n=> n+(n===1?' retablo 30×40':' retablos 30×40')}
+];
 const CATEGORIAS = [
   { id:'bodas', nombre:'Bodas', detalle:'Boda, preboda, civil, preparativos y recepción',
     foto:IMGS.boda, fotoAlt:'Pareja de novios frente a frente bajo el velo',
     items:[
       {id:'horas', nombre:'Horas de cobertura', detalle:'12 horas equivalen a todo el día', unidad:'hora adicional', precio:PRECIO_HORA, min:3, max:12, paso:1, linea:n=> n>=12 ? 'Cobertura completa (todo el día)' : n+' horas de cobertura'},
-      {id:'fotos', nombre:'Fotos editadas', detalle:'Entrega digital', etiqueta:ETQ_FOTOS, costo:costoFotos, min:100, max:600, paso:1, linea:n=> n+' fotos editadas'},
+      {id:'fotos', nombre:'Fotos editadas', detalle:'Entrega digital', foto:true, min:100, max:600, paso:1, linea:n=> n+' fotos editadas'},
       {id:'preboda', nombre:'Sesión preboda', detalle:'Sesión aparte antes de la boda', tipo:'opcion', precio:95000, suma:{fotos:5}, min:0, max:1, paso:1, linea:n=> n?'Sesión preboda':null},
       {id:'civil', nombre:'Boda civil', detalle:'Cobertura de la ceremonia civil', tipo:'opcion', precio:120000, suma:{fotos:20}, min:0, max:1, paso:1, linea:n=> n?'Boda civil':null},
       {id:'preparativos', nombre:'Preparativos', detalle:'Alistamiento de los novios', tipo:'opcion', precio:95000, suma:{fotos:10}, min:0, max:1, paso:1, linea:n=> n?'Preparativos':null},
       {id:'recepcion', nombre:'Recepción / fiesta', detalle:'Cobertura de la celebración', tipo:'opcion', precio:225000, suma:{horas:2,fotos:30}, min:0, max:1, paso:1, linea:n=> n?'Recepción / fiesta':null},
-      {id:'impresas', nombre:'Fotos impresas', detalle:'Papel fotográfico', unidad:'foto adicional', precio:5000, min:0, max:100, paso:1, linea:n=> n?n+' fotos impresas':null},
-      {id:'retablo', nombre:'Retablo 60×100', detalle:'Gran formato', tipo:'opcion', precio:null, min:0, max:1, paso:1, linea:n=> n?'Retablo 60×100':null}
+      {id:'impresas', nombre:'Fotos impresas', detalle:'Papel fotográfico (mínimo 10 fotos, luego de 1 en 1)', unidad:'foto adicional', precio:5000, salto:MIN_IMPRESAS, min:0, max:100, paso:1, linea:n=> n?n+' fotos impresas':null},
+      ...RETABLOS
     ],
     paquetes:[
-      {id:'basico', nombre:'Básico', precio:375000,
+      {id:'basico', nombre:'Básico', precio:375000, fotoExtra:2200, topeFotos:99,
        incluye:['3 horas de cobertura','100 fotos editadas','Entrega digital'],
        preset:{horas:3,fotos:100}},
-      {id:'estandar', nombre:'Estándar', recomendado:true, precio:595000,
+      {id:'estandar', nombre:'Estándar', recomendado:true, precio:595000, fotoExtra:1800, topeFotos:120,
        incluye:['5 horas de cobertura','200 fotos editadas','Boda + sesión preboda','20 fotos impresas'],
        preset:{horas:5,fotos:200,preboda:1,impresas:20}},
-      {id:'premium', nombre:'Premium', precio:1325000,
+      {id:'premium', nombre:'Premium', precio:1325000, fotoExtra:1200, topeFotos:null,
        incluye:['Cobertura completa (todo el día)','400 fotos editadas','Boda + preboda + boda civil + preparativos + recepción / fiesta','50 fotos impresas','1 retablo 60×100'],
-       preset:{horas:12,fotos:400,preboda:1,civil:1,preparativos:1,recepcion:1,impresas:50,retablo:1}}
+       preset:{horas:12,fotos:400,preboda:1,civil:1,preparativos:1,recepcion:1,impresas:50,retablo60:1}}
     ]},
 
   { id:'sesiones', nombre:'Sesiones', detalle:'Embarazo, pareja, redes sociales y retratos',
@@ -488,41 +584,40 @@ const CATEGORIAS = [
     items:[
       {id:'horas', nombre:'Horas de sesión', detalle:'Tiempo con el fotógrafo', unidad:'hora adicional', precio:PRECIO_HORA, min:1, max:4, paso:1, linea:n=> n+(n===1?' hora de sesión':' horas de sesión')},
       {id:'locaciones', nombre:'Locaciones', detalle:'Lugares distintos en la misma sesión', etiqueta:'las del paquete base van incluidas; $35.000 por cada locación adicional', costo:n=>n*35000, min:1, max:5, paso:1, linea:n=> n+(n===1?' locación':' locaciones')},
-      {id:'fotos', nombre:'Fotos editadas', detalle:'Entrega digital', etiqueta:ETQ_FOTOS, costo:costoFotos, min:5, max:60, paso:1, linea:n=> n+' fotos editadas'},
+      {id:'fotos', nombre:'Fotos editadas', detalle:'Entrega digital', foto:true, min:5, max:60, paso:1, linea:n=> n+' fotos editadas'},
       {id:'cambios', nombre:'Cambios de ropa', detalle:'Looks distintos durante la sesión', unidad:'cambio', precio:20000, min:0, max:5, paso:1, linea:n=> n?n+(n===1?' cambio de ropa':' cambios de ropa'):null},
-      {id:'impresas', nombre:'Fotos impresas', detalle:'Papel fotográfico', unidad:'foto adicional', precio:5000, min:0, max:30, paso:1, linea:n=> n?n+' fotos impresas':null},
-      {id:'retablo', nombre:'Retablos 30×40', detalle:'Foto enmarcada lista para colgar', unidad:'retablo', precio:null, min:0, max:3, paso:1, linea:n=> n?n+(n===1?' retablo 30×40':' retablos 30×40'):null}
+      {id:'impresas', nombre:'Fotos impresas', detalle:'Papel fotográfico (mínimo 10 fotos, luego de 1 en 1)', unidad:'foto adicional', precio:5000, salto:MIN_IMPRESAS, min:0, max:30, paso:1, linea:n=> n?n+' fotos impresas':null},
+      ...RETABLOS
     ],
     paquetes:[
-      {id:'basico', nombre:'Básico', precio:75000,
+      {id:'basico', nombre:'Básico', precio:75000, fotoExtra:10000, topeFotos:9,
        incluye:['1 hora de sesión','1 locación','5 fotos editadas','Entrega digital'],
        preset:{horas:1,locaciones:1,fotos:5}},
-      {id:'estandar', nombre:'Estándar', recomendado:true, precio:175000,
+      {id:'estandar', nombre:'Estándar', recomendado:true, precio:175000, fotoExtra:8000, topeFotos:15,
        incluye:['2 horas de sesión','15 fotos editadas','Entrega digital','2 cambios de ropa'],
        preset:{horas:2,locaciones:1,fotos:15,cambios:2}},
-      {id:'premium', nombre:'Premium', precio:480000,
+      {id:'premium', nombre:'Premium', precio:480000, fotoExtra:6000, topeFotos:null,
        incluye:['3 horas de sesión','3 locaciones','40 fotos editadas','Entrega digital','5 fotos impresas','Retablos 30×40','3 cambios de ropa'],
-       preset:{horas:3,locaciones:3,fotos:40,cambios:3,impresas:5,retablo:1}}
+       preset:{horas:3,locaciones:3,fotos:40,cambios:3,impresas:5,retablo30:1}}
     ]},
 
   { id:'quince', nombre:'15 años', detalle:'Sesión de quince años',
     foto:IMGS.quince, fotoAlt:'Quinceañera con vestido rojo al atardecer',
     items:[
       {id:'horas', nombre:'Horas de sesión', detalle:'Tiempo con el fotógrafo', unidad:'hora adicional', precio:PRECIO_HORA, min:2, max:6, paso:1, linea:n=> n+' horas de sesión'},
-      {id:'fotos', nombre:'Fotos editadas', detalle:'Alta calidad, entrega digital', etiqueta:ETQ_FOTOS, costo:costoFotos, min:60, max:200, paso:1, linea:n=> n+' fotos editadas'},
+      {id:'fotos', nombre:'Fotos editadas', detalle:'Alta calidad, entrega digital', foto:true, min:60, max:200, paso:1, linea:n=> n+' fotos editadas'},
       {id:'pre15', nombre:'Sesión Pre 15', detalle:'Sesión previa a la celebración', tipo:'opcion', precio:95000, suma:{fotos:5}, min:0, max:1, paso:1, linea:n=> n?'Sesión Pre 15':null},
-      {id:'impresas', nombre:'Fotos impresas', detalle:'Papel fotográfico', unidad:'foto adicional', precio:5000, min:0, max:40, paso:1, linea:n=> n?n+' fotos impresas':null},
-      {id:'retablo30', nombre:'Retablo 30×40', detalle:'Foto enmarcada', tipo:'opcion', precio:null, min:0, max:1, paso:1, linea:n=> n?'Retablo 30×40':null},
-      {id:'retablo60', nombre:'Retablo grande 60×100', detalle:'Gran formato', tipo:'opcion', precio:null, min:0, max:1, paso:1, linea:n=> n?'Retablo grande 60×100':null}
+      {id:'impresas', nombre:'Fotos impresas', detalle:'Papel fotográfico (mínimo 10 fotos, luego de 1 en 1)', unidad:'foto adicional', precio:5000, salto:MIN_IMPRESAS, min:0, max:40, paso:1, linea:n=> n?n+' fotos impresas':null},
+      ...RETABLOS
     ],
     paquetes:[
-      {id:'basico', nombre:'Básico', precio:275000,
+      {id:'basico', nombre:'Básico', precio:275000, fotoExtra:3800, topeFotos:39,
        incluye:['2 horas de sesión','60 fotos editadas en alta calidad','Entrega digital'],
        preset:{horas:2,fotos:60}},
-      {id:'estandar', nombre:'Estándar', recomendado:true, precio:425000,
+      {id:'estandar', nombre:'Estándar', recomendado:true, precio:425000, fotoExtra:3000, topeFotos:30,
        incluye:['3 horas de sesión','100 fotos editadas','Entrega digital en alta calidad','10 fotos impresas','Retablo 30×40'],
        preset:{horas:3,fotos:100,impresas:10,retablo30:1}},
-      {id:'premium', nombre:'Premium', precio:685000,
+      {id:'premium', nombre:'Premium', precio:685000, fotoExtra:2500, topeFotos:null,
        incluye:['5 horas de sesión','150 fotos editadas','Sesión Pre 15','20 fotos impresas','Retablo grande 60×100'],
        preset:{horas:5,fotos:150,pre15:1,impresas:20,retablo60:1}}
     ]},
@@ -569,8 +664,13 @@ $('#pie-lema').textContent = CONFIG.lema;
 $('#pie-info').textContent = '© ' + new Date().getFullYear() + ' ' + CONFIG.nombre + (CONFIG.ciudad ? ' · ' + CONFIG.ciudad : '');
 const saludo = 'Hola, quiero información sobre las sesiones de fotografía.';
 ['#wa-top','#wa-cta'].forEach(s=>{ $(s).href = waLink(saludo); });
-$('#ig').href = 'https://www.instagram.com/' + CONFIG.instagram;
+$('#ig').href = CONFIG.instagramUrl;
 $('#ig').textContent = 'Instagram @' + CONFIG.instagram;
+$('#fb').href = CONFIG.facebookUrl;
+$('#fb').textContent = 'Facebook /' + CONFIG.facebookUsuario;
+$('#red-ig').href = CONFIG.instagramUrl; $('#red-ig-u').textContent = '@' + CONFIG.instagram;
+$('#red-fb').href = CONFIG.facebookUrl; $('#red-fb-u').textContent = '/' + CONFIG.facebookUsuario;
+$('#pie-redes').innerHTML = '<a href="'+CONFIG.instagramUrl+'" target="_blank" rel="noopener">Instagram</a><a href="'+CONFIG.facebookUrl+'" target="_blank" rel="noopener">Facebook</a>';
 if(CONFIG.heroImagen){
   const im = document.createElement('img'); im.src = CONFIG.heroImagen; im.alt = 'Fotografía de una boda'; im.loading = 'eager';
   $('#visor').insertBefore(im, $('#visor').firstChild);
@@ -632,10 +732,22 @@ const iguales = (c,a,b)=>c.items.every(e=>(a[e.id]||0)===(b[e.id]||0));
 const paqBase = ()=> bPk || bCat.paquetes[0];
 
 /* Lo que se cobra de un item: solo lo que pasa de lo que ya trae el paquete base (pv). */
-function costoItem(e,n,pv){
+function costoItem(e,n,pv,pb){
   const q = Math.max(0, n-(pv[e.id]||0));
   if(!q) return 0;
+  if(e.foto) return q*pb.fotoExtra;
   return e.costo ? e.costo(q) : (e.precio==null ? null : e.precio*q);
+}
+/* Máximo que se puede elegir de un item. En fotos editadas: fotos del paquete + tope de adicionales
+   (las fotos que suman las opciones cuentan dentro del tope). */
+function maxDe(e,c,est,pb){
+  if(!e.foto || pb.topeFotos==null) return e.max;
+  const pv = presetDe(c,pb);
+  return Math.max(pv[e.id]||e.min, Math.min(e.max, (pv[e.id]||0) + pb.topeFotos - bonus(c,est,pv,e.id)));
+}
+function ajustarTope(){
+  const pb = paqBase();
+  bCat.items.forEach(e=>{ if(e.foto){ const m = maxDe(e,bCat,estado,pb); if(estado[e.id]>m) estado[e.id] = m; } });
 }
 /* Horas / fotos que las opciones agregadas (por encima del paquete base) suman al paquete; ya van incluidas en su precio. */
 function bonus(c,est,pv,k){
@@ -653,7 +765,7 @@ function calcular(c,est,pb){
     let txt = e.linea(n+x); if(!txt) return;
     if(x) txt += ' (incluye '+x+' de tus opciones)';
     let sub = null;
-    const cst = costoItem(e,n,pv);
+    const cst = costoItem(e,n,pv,pb);
     if(cst==null) completo = false; else { sub = cst; total += cst; }
     lineas.push({texto:txt, sub});
   });
@@ -675,7 +787,7 @@ function dibujarControles(){
     const sumaTxt = e.suma ? ' · suma '+[e.suma.horas?e.suma.horas+' horas':'', e.suma.fotos?e.suma.fotos+' fotos':''].filter(Boolean).join(' y ') : '';
     const precio = e.etiqueta ? ' · '+e.etiqueta : e.precio==null ? '' : ' · '+cop(e.precio)+(e.unidad?' por '+e.unidad:'')+sumaTxt;
     return '<div class="ctl"><div class="ctl-name" id="n-'+e.id+'">'+esc(e.nombre)+'</div>'+control+
-      '<div class="ctl-help">'+esc(e.detalle)+precio+'</div><div class="ctl-sub" id="s-'+e.id+'"></div></div>';
+      '<div class="ctl-help" id="h-'+e.id+'">'+esc(e.detalle)+precio+'</div><div class="ctl-sub" id="s-'+e.id+'"></div>'+(e.foto?'<div class="ctl-tope" id="t-'+e.id+'" hidden></div>':'')+'</div>';
   }).join('');
 }
 function elegirBuilder(c,p){
@@ -692,9 +804,16 @@ function actualizar(){
     else{
       $('#v-'+e.id).textContent = n;
       $('[data-dec="'+e.id+'"]').disabled = n<=Math.max(e.min,pv[e.id]||0);
-      $('[data-inc="'+e.id+'"]').disabled = n>=e.max;
+      $('[data-inc="'+e.id+'"]').disabled = n>=maxDe(e,c,estado,pb);
     }
-    const cst = n ? costoItem(e,n,pv) : null;
+    const cst = n ? costoItem(e,n,pv,pb) : null;
+    if(e.foto){
+      const sig = c.paquetes[c.paquetes.indexOf(pb)+1];
+      $('#h-'+e.id).textContent = e.detalle+' · '+cop(pb.fotoExtra)+' por foto adicional'+(pb.topeFotos!=null?' (hasta '+pb.topeFotos+' fotos adicionales)':'');
+      const alTope = pb.topeFotos!=null && n>=maxDe(e,c,estado,pb) && !!sig;
+      const t = $('#t-'+e.id); t.hidden = !alTope;
+      if(alTope) t.textContent = 'Llegaste al máximo de fotos adicionales para este paquete. Para más fotos, te conviene el paquete '+sig.nombre+': elígelo arriba.';
+    }
     $('#s-'+e.id).textContent = !n ? '' : cst ? cop(cst) : (cst===0 ? 'Incluido en el paquete base' : '');
   });
   const r = calcular(c,estado,pb);
@@ -714,9 +833,14 @@ function aplicarPaso(b){
   const e = byId(bCat.items,id), pv = presetDe(bCat,paqBase());
   const antes = estado[id];
   if(b.dataset.sw){ if(pv[id]) return false; estado[id] = estado[id] ? 0 : 1; }
-  else{ const d = b.dataset.inc ? 1 : -1; estado[id] = Math.min(e.max, Math.max(Math.max(e.min,pv[id]||0), antes+d*e.paso)); }
+  else{
+    const d = b.dataset.inc ? 1 : -1, piso = Math.max(e.min,pv[id]||0);
+    let nuevo = antes + d*e.paso;
+    if(e.salto && nuevo<e.salto) nuevo = d>0 ? e.salto : piso;   // ej. impresas: de 0 salta a 10 y baja de 10 a lo que trae el paquete
+    estado[id] = Math.min(maxDe(e,bCat,estado,paqBase()), Math.max(piso, nuevo));
+  }
   if(estado[id]===antes) return false;
-  actualizar(); return true;
+  ajustarTope(); actualizar(); return true;
 }
 /* Mantener presionado + o − repite el cambio (útil para fotos de 1 en 1). */
 let repTimer = null, supClick = false;
@@ -789,21 +913,70 @@ function mensajeReserva(){
   if(v.lugar) m.push('Lugar: '+v.lugar);
   const tot = totalReserva(d);
   if(v.adelanto>0 && tot!=null) m.push('', 'Adelanto: '+cop(v.adelanto), 'Saldo pendiente: '+cop(tot-v.adelanto));
+  if(R.pago && R.pago.ok) m.push('Pago reportado: '+cop(R.pago.monto)+' por '+R.pago.medio+' (referencia: '+R.pago.ref+')');
   m.push('', 'Incluye:'); d.lineas.forEach(l=>m.push('• '+l));
   if(v.notas) m.push('', 'Notas: '+v.notas);
-  m.push('', R.descargado ? 'Te adjunto mi comprobante en PDF.' : '¿Qué fechas tienen disponibles?');
+  m.push('', R.descargado ? 'Te adjunto mi comprobante en PDF.' : 'Voy a enviarte mi comprobante en PDF.');
   return m.join('\n');
 }
-const actualizarWa = ()=>{ if(R) $('#r-wa').href = waLink(mensajeReserva()); };
+const pagado = ()=>!!(R && R.pago && R.pago.ok);
+function actualizarWa(){
+  if(!R) return;
+  $('#r-wa').href = pagado() ? waLink(mensajeReserva()) : '#reservar';
+  const d = R.d;
+  $('#cot-wa').href = waLink('Hola, quiero cotizar: '+d.servicio+'.\n\nIncluye:\n'+d.lineas.map(l=>'• '+l).join('\n')+'\n\n¿Me confirmas el valor y los datos de pago?');
+  $('#pago-wa').href = waLink('Hola, quiero reservar: '+d.servicio+' ('+precioTxt(d)+'). ¿Me compartes los datos para hacer el pago?');
+}
+function aplicarBloqueo(){
+  const ok = pagado();
+  $('#r-pdf').disabled = !ok;
+  $('#r-share').disabled = !ok; if(!ok) $('#r-share').hidden = true;
+  $('#r-wa').setAttribute('aria-disabled', ok ? 'false' : 'true');
+  $('#md-lock').hidden = ok;
+  actualizarWa();
+}
+function bloquear(msg){
+  if(R.pago.ok){ R.pago = {ok:false}; R.file = null; R.descargado = false; }
+  $('#pago-estado').hidden = true;
+  if(msg) $('#md-msg').textContent = msg;
+  aplicarBloqueo();
+}
+const minimoPago = d=>{
+  const tot = totalReserva(d); if(tot==null) return null;
+  if(d.cuotas) return d.precio;
+  return Math.min(tot, Math.ceil(tot*(CONFIG.adelantoMinimoPct||30)/100/1000)*1000);
+};
+function prepararPago(){
+  const d = R.d, tot = totalReserva(d), min = minimoPago(d);
+  R.pago = {ok:false};
+  const cot = tot==null;
+  $('#adel').hidden = cot; $('#pago').hidden = cot; $('#pago-cot').hidden = !cot;
+  $('#pago-estado').hidden = true; $('#p-ref').value = ''; $('#p-ok').checked = false;
+  $('#r-adelanto').value = '';
+  if(!cot){
+    const chips = [['Mínimo '+cop(min),min]];
+    if(!d.cuotas && Math.round(tot*0.5)>min) chips.push(['50 % · '+cop(Math.round(tot*0.5)),Math.round(tot*0.5)]);
+    if(tot>min) chips.push([d.cuotas?'Todo el año · '+cop(tot):'Pagar todo · '+cop(tot),tot]);
+    $('#adel-chips').innerHTML = chips.map(c=>'<button type="button" class="chip" data-monto="'+c[1]+'">'+esc(c[0])+'</button>').join('');
+    $('#adel-min').textContent = d.cuotas ? 'Para empezar pagas la primera cuota ('+cop(min)+'). Puedes pagar más si quieres.'
+      : 'Para separar tu fecha el mínimo es '+cop(min)+' ('+(CONFIG.adelantoMinimoPct||30)+' % del valor). El resto lo pagas después.';
+    const pagos = (CONFIG.pagos||[]).filter(m=>m && m.nombre && m.dato);
+    $('#pago-list').innerHTML = pagos.map((m,i)=>'<div class="pago-item"><div><b>'+esc(m.nombre)+'</b>'+(m.titular?'<small>A nombre de '+esc(m.titular)+'</small>':'')+'</div><div><span class="dato">'+esc(m.dato)+'</span> <button type="button" class="btn btn--ghost btn--sm" data-copiar="'+i+'">Copiar</button></div></div>').join('');
+    $('#p-medio').innerHTML = '<option value="">Elige…</option>'+pagos.map(m=>'<option>'+esc(m.nombre)+'</option>').join('');
+    $('#pago-vacio').hidden = pagos.length>0; $('#pago-form').hidden = pagos.length===0;
+    fijarAdelanto(min);
+  }
+  aplicarBloqueo();
+}
 function abrirReserva(d, btn){
-  R = {d, codigo:nuevoCodigo(), descargado:false, file:null};
+  R = {d, codigo:nuevoCodigo(), descargado:false, file:null, pago:{ok:false}};
   mdOpener = btn || null;
   $('#md-titulo').textContent = d.servicio;
   $('#md-precio').textContent = d.precio!=null ? cop(d.precio) : 'A cotizar';
   $('#md-unidad').textContent = d.unidad;
   $('#md-lineas').innerHTML = d.lineas.map(t=>'<li>'+CHECK+'<span>'+esc(t)+'</span></li>').join('');
   $('#md-msg').textContent = ''; $('#r-share').hidden = true;
-  $('#r-adelanto').value = ''; $('#adel').hidden = totalReserva(d)==null; actualizarSaldo();
+  $('#md-msg').textContent = ''; prepararPago(); actualizarSaldo();
   const h = new Date(); $('#r-fecha').min = h.getFullYear()+'-'+String(h.getMonth()+1).padStart(2,'0')+'-'+String(h.getDate()).padStart(2,'0');
   actualizarWa();
   md.hidden = false; document.body.style.overflow = 'hidden'; $('#r-nombre').focus();
@@ -826,7 +999,7 @@ document.addEventListener('keydown', ev=>{
   if(md.hidden) return;
   if(ev.key==='Escape') cerrarReserva();
   else if(ev.key==='Tab'){
-    const f = $$('button:not([disabled]),input,textarea,a[href]',md).filter(e=>!e.hidden && e.offsetParent!==null);
+    const f = $$('button:not([disabled]),input,textarea,select,a[href]:not([aria-disabled="true"])',md).filter(e=>!e.hidden && e.offsetParent!==null);
     if(!f.length) return;
     const i = f.indexOf(document.activeElement);
     if(ev.shiftKey && i<=0){ ev.preventDefault(); f[f.length-1].focus(); }
@@ -834,10 +1007,12 @@ document.addEventListener('keydown', ev=>{
   }
 });
 ['r-nombre','r-tel','r-fecha','r-hora','r-lugar','r-notas'].forEach(id=>{ $('#'+id).addEventListener('input',actualizarWa); $('#'+id).addEventListener('change',actualizarWa); });
-$('#r-wa').addEventListener('click', ev=>{ if(!validar()) ev.preventDefault(); });
+$('#r-wa').addEventListener('click', ev=>{ if(!pagado() || !validar()) ev.preventDefault(); });
+$('#cot-wa').addEventListener('click', ev=>{ if(!validar()) ev.preventDefault(); });
 
 function actualizarSaldo(){
   const d = R.d, tot = totalReserva(d), el = $('#md-saldo'), v = soloNum($('#r-adelanto').value);
+  $('#p-ok-txt').textContent = v>0 ? 'Hice el pago de '+cop(v)+' con el medio y la referencia indicados.' : 'Hice el pago.';
   if(tot==null || v<=0){ el.hidden = true; el.innerHTML = ''; return; }
   el.innerHTML = '<span>'+(d.cuotas?'Total del año ':'Valor ')+'<b>'+cop(tot)+'</b></span><span>Adelanto <b>'+cop(v)+'</b></span><span>Saldo pendiente <b>'+cop(tot-v)+'</b></span>';
   el.hidden = false;
@@ -847,6 +1022,7 @@ function fijarAdelanto(n){
   n = Math.max(0, Math.min(n, tot));
   $('#r-adelanto').value = n ? n.toLocaleString('es-CO') : '';
   $('#md-msg').textContent = '';
+  if(pagado() && n!==R.pago.monto) bloquear('Cambiaste el valor a pagar: confirma el pago otra vez.');
   actualizarSaldo(); actualizarWa();
 }
 $('#r-adelanto').addEventListener('input', function(){
@@ -854,10 +1030,29 @@ $('#r-adelanto').addEventListener('input', function(){
   if(tot!=null && n>tot){ fijarAdelanto(tot); $('#md-msg').textContent = 'El adelanto no puede ser mayor que el valor del paquete.'; return; }
   fijarAdelanto(n);
 });
-$$('[data-pct]').forEach(b=>b.addEventListener('click', ()=>{
-  const tot = totalReserva(R.d); if(tot==null) return;
-  fijarAdelanto(Math.round(tot*(+b.dataset.pct)/100));
-}));
+$('#adel-chips').addEventListener('click', ev=>{ const b = ev.target.closest('[data-monto]'); if(b) fijarAdelanto(+b.dataset.monto); });
+$('#pago-list').addEventListener('click', ev=>{
+  const b = ev.target.closest('[data-copiar]'); if(!b) return;
+  const m = (CONFIG.pagos||[]).filter(x=>x && x.nombre && x.dato)[+b.dataset.copiar]; if(!m) return;
+  const ok = ()=>{ b.textContent = 'Copiado'; setTimeout(()=>{ b.textContent = 'Copiar'; },1600); };
+  try{ navigator.clipboard.writeText(m.dato.replace(/\s+/g,'')).then(ok, ()=>{ b.textContent = 'Copia el número'; }); }catch(e){ b.textContent = 'Copia el número'; }
+});
+['p-medio','p-ref','p-ok'].forEach(id=>{ ['input','change'].forEach(t=>$('#'+id).addEventListener(t, ()=>{ if(pagado()) bloquear('Cambiaste los datos del pago: confirma otra vez.'); })); });
+$('#p-conf').addEventListener('click', ()=>{
+  const msg = $('#md-msg'), d = R.d, v = valoresForm(), min = minimoPago(d), tot = totalReserva(d);
+  if(!validar()) return;
+  if(v.adelanto<min){ msg.textContent = 'El valor a pagar debe ser de al menos '+cop(min)+'.'; $('#r-adelanto').focus(); return; }
+  if(tot!=null && v.adelanto>tot){ msg.textContent = 'El valor a pagar no puede ser mayor que el valor del paquete.'; return; }
+  const medio = $('#p-medio').value, ref = $('#p-ref').value.trim();
+  if(!medio){ msg.textContent = 'Elige el medio con el que pagaste.'; $('#p-medio').focus(); return; }
+  if(ref.length<4){ msg.textContent = 'Escribe la referencia del pago (la ves en la app al terminar).'; $('#p-ref').focus(); return; }
+  if(!$('#p-ok').checked){ msg.textContent = 'Marca la casilla para confirmar que ya hiciste el pago.'; return; }
+  R.pago = {ok:true, medio, ref, monto:v.adelanto, fecha:new Date()};
+  const e = $('#pago-estado');
+  e.innerHTML = '<b>Pago registrado.</b> '+esc(cop(v.adelanto))+' por '+esc(medio)+' (ref. '+esc(ref)+'). Verificaremos el pago y te confirmamos por WhatsApp. Ya puedes descargar tu comprobante y enviarlo.';
+  e.hidden = false; msg.textContent = '';
+  aplicarBloqueo();
+});
 
 /* PDF con pdf-lib: A4 vertical, medidas en milímetros desde la esquina superior izquierda. */
 const san = s=>String(s).replace(/[^\x20-\x7E\xA0-\xFF–—•…‘’“”]/g,'');
@@ -929,6 +1124,16 @@ async function crearPDF(){
   /* Total */
   y += 9; const tx = M+CW*0.31, tot = totalReserva(d);
   ln(tx,y,M+CW,y,GOLD,1);
+  if(R.pago && R.pago.ok){
+    const pw = tx-M-4, f2 = R.pago.fecha, fh = String(f2.getDate()).padStart(2,'0')+'/'+String(f2.getMonth()+1).padStart(2,'0')+'/'+f2.getFullYear()+' '+hora12(String(f2.getHours()).padStart(2,'0')+':'+String(f2.getMinutes()).padStart(2,'0'));
+    box(M,y+3,pw,31,{fill:SOFT,stroke:GOLD,lw:.6});
+    T('PAGO REPORTADO',M+2.5,y+8,{bold:true,size:8,color:GOLD});
+    T(cut('Medio: '+R.pago.medio,fr,8.2,pw-5),M+2.5,y+13,{size:8.2});
+    T(cut('Ref.: '+R.pago.ref,fr,8.2,pw-5),M+2.5,y+17.5,{size:8.2});
+    T('Valor: '+cop(R.pago.monto),M+2.5,y+22,{size:8.2,bold:true});
+    T(cut(fh,fr,7.6,pw-5),M+2.5,y+26.5,{size:7.6,color:MUTED});
+    T('Pendiente de verificar',M+2.5,y+31,{size:7.4,color:MUTED});
+  }
   if(v.adelanto>0 && tot!=null){
     T(d.cuotas?'TOTAL DEL AÑO ('+d.cuotas+' CUOTAS)':'VALOR DEL PAQUETE',tx+3,y+7,{bold:true,size:9});
     T(cop(tot)+' COP',M+CW-3,y+7,{bold:true,size:11,align:'right'});
@@ -949,11 +1154,11 @@ async function crearPDF(){
 
   /* Condiciones */
   T('CONDICIONES DEL SERVICIO',M,y,{bold:true,size:10.5,color:GOLD}); y += 6;
-  const conds = ['Este comprobante es una solicitud de reserva: queda confirmada cuando '+CONFIG.nombre+' responda por WhatsApp. No es una factura electrónica.', CONFIG.aviso, 'El servicio solicitado corresponde al '+d.servicio+'.'];
+  const conds = ['Este comprobante es una solicitud de reserva: queda confirmada cuando '+CONFIG.nombre+' verifique el pago y responda por WhatsApp. No es una factura electrónica.', CONFIG.aviso, 'El servicio solicitado corresponde al '+d.servicio+'.'];
   if(d.horas>=12) conds.push('La cobertura solicitada es de todo el día'+(v.fecha?', el '+fmtFecha(v.fecha):'')+'.');
   else if(d.horas && v.hora) conds.push('La cobertura solicitada es de '+d.horas+(d.horas===1?' hora':' horas')+', iniciando a las '+hora12(v.hora)+(v.fecha?' del '+fmtFecha(v.fecha):'')+'.');
   if(d.fotos) conds.push('Las fotografías serán entregadas en formato digital, con un total de '+d.fotos+' fotografías editadas.');
-  if(v.adelanto>0 && tot!=null) conds.push('Adelanto acordado de '+cop(v.adelanto)+'. Saldo pendiente: '+cop(tot-v.adelanto)+'. El adelanto y la forma de pago se confirman con '+CONFIG.nombre+' por WhatsApp.');
+  if(v.adelanto>0 && tot!=null) conds.push('Pago reportado por el cliente: '+cop(v.adelanto)+(R.pago&&R.pago.ok?' por '+R.pago.medio+' (ref. '+R.pago.ref+')':'')+'. Saldo pendiente: '+cop(tot-v.adelanto)+'. El pago queda sujeto a verificación por '+CONFIG.nombre+'.');
   if(v.notas) conds.push('Notas del cliente: '+v.notas);
   let nLin = 0;
   conds.forEach(c=>{ const ls = wrap(c,fr,8.8,CW-8).slice(0,4); ls.forEach((s,i)=>{ if(y>252) return; if(i===0) T('•',M+1.5,y,{size:8.8}); T(s,M+5,y,{size:8.8}); y+=4.5; }); y+=0.8; nLin++; });
@@ -962,7 +1167,7 @@ async function crearPDF(){
   const fy = Math.max(y+6, 262);
   ln(M,fy,M+CW,fy,INK,.6);
   T(CONFIG.nombre,M+3,fy+7,{bold:true,size:10});
-  T(CONFIG.ciudad,M+3,fy+12,{size:9}); T('Contacto: '+CONFIG.whatsappVisible,M+3,fy+17,{size:9}); T('Instagram @'+CONFIG.instagram,M+3,fy+22,{size:9});
+  T(CONFIG.ciudad,M+3,fy+12,{size:9}); T('Contacto: '+CONFIG.whatsappVisible,M+3,fy+17,{size:9}); T('Instagram @'+CONFIG.instagram,M+3,fy+22,{size:9}); T('Facebook /'+CONFIG.facebookUsuario,M+3,fy+27,{size:9});
   T('Gracias por confiar en nosotros.',M+CW-3,fy+12,{size:10,align:'right'});
   T(CONFIG.lema,M+CW-3,fy+17,{size:8,color:MUTED,align:'right'});
 
@@ -979,6 +1184,7 @@ async function guardarArchivo(blob, nombre){
   setTimeout(()=>URL.revokeObjectURL(url), 4000);
 }
 $('#r-pdf').addEventListener('click', async function(){
+  if(!pagado()){ $('#md-msg').textContent = 'Primero confirma tu pago para descargar el comprobante.'; return; }
   if(!validar()) return;
   const b = this, msg = $('#md-msg'); b.disabled = true; msg.textContent = 'Preparando tu comprobante…';
   try{
@@ -994,7 +1200,7 @@ $('#r-pdf').addEventListener('click', async function(){
   }finally{ b.disabled = false; }
 });
 $('#r-share').addEventListener('click', async ()=>{
-  if(!R||!R.file) return;
+  if(!R||!R.file||!pagado()) return;
   try{ await navigator.share({files:[R.file], title:'Comprobante de reserva '+R.codigo, text:'Mi comprobante de reserva con '+CONFIG.nombre}); }catch(e){}
 });
 
